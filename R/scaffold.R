@@ -38,8 +38,12 @@ make_file_dirs <- function(path = ".", code = TRUE, data = TRUE, output = TRUE,
 #' * `"analysis"` - builds the `code/` + `data/` + `output/` skeleton via
 #'   [make_file_dirs()] and writes the project mechanics directly (a PHI-aware
 #'   `.gitignore`, an `renv`-activation `.Rprofile`, `<name>.Rproj`, a README
-#'   stub, the `memos/` + `workflow-feedback.md` state stack, and an optional
-#'   `targets` pipeline stub). It writes **no** `CLAUDE.md` and **no** `.claude/`:
+#'   stub, the `memos/` state stack, and an optional `targets` pipeline stub).
+#'   No per-project feedback log is written: feedback about a reusable
+#'   capability (a skill, plugin, or command) belongs in the repo that owns
+#'   that capability (e.g. this package's own `workflow-feedback.md`, or
+#'   `biostat-support`'s), not scattered across every analysis project that
+#'   happens to use it. It writes **no** `CLAUDE.md` and **no** `.claude/`:
 #'   the `project-setup` skill (biostat plugin) writes both the router and the
 #'   traveling `.claude/hooks/` guard set, copied from the plugin's own canonical
 #'   copy (`plugins/biostat/hooks/`) — not from an installed kernel. PHI
@@ -116,24 +120,17 @@ create_project <- function(name, path = ".", type = c("analysis", "package"),
 #' @keywords internal
 #' @noRd
 .write_state_stack <- function(dest) {
-  # Directory + pure-mechanical stub only. The *content* templates
-  # (OVERVIEW.md, STATUS.md) are biostat-owned and dropped in by the
-  # project-setup skill — one home per fact, not duplicated here.
+  # Directory + pure-mechanical stub only. The *content* template
+  # (memos/decisions.md seed) is biostat-owned and dropped in by the
+  # project-setup skill, same as its README.md orientation content and
+  # STATUS.md — one home per fact, not duplicated here. No
+  # workflow-feedback.md: tooling/capability feedback belongs in the repo
+  # that owns the capability being given feedback about, not in every
+  # scaffolded analysis project (see create_project() docs).
   memos <- fs::path(dest, "memos")
   fs::dir_create(memos)
   keep <- fs::path(memos, ".gitkeep")
   if (!fs::file_exists(keep)) fs::file_create(keep)
-  writeLines(c(
-    "# Workflow feedback",
-    "",
-    "**Tooling friction only** - harness quirks, plugin/command mechanics, CI",
-    "problems. Kept distinct from `memos/decisions.md` (decisions) and any",
-    "output-quality log.",
-    "",
-    "Format: `YYYY-MM-DD - <tool> - friction -> action`",
-    "",
-    "---"
-  ), fs::path(dest, "workflow-feedback.md"))
 }
 
 .write_rprofile <- function(dest) {

@@ -11,9 +11,11 @@ Data manipulation follows a dplyr-first grammar; large-data backends
 
 Useful links:
 
-- <https://github.com/imbroglio-dc/helpers>
+- <https://github.com/imbroglio-dc/dctools>
 
-- Report bugs at <https://github.com/imbroglio-dc/helpers/issues>
+- <https://imbroglio-dc.github.io/dctools/>
+
+- Report bugs at <https://github.com/imbroglio-dc/dctools/issues>
 
 ## Author
 

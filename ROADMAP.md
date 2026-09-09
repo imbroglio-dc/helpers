@@ -7,22 +7,22 @@ dependencies low.
 
 ## 1. Ingestion & typing
 
-[`check_types()`](https://imbroglio-dc.github.io/helpers/reference/check_types.md)
+[`check_types()`](https://imbroglio-dc.github.io/dctools/reference/check_types.md)
 — text-as-numeric/date, logical-as-text, high-cardinality,
 binary-as-numeric
 
-[`check_colnames()`](https://imbroglio-dc.github.io/helpers/reference/check_colnames.md)
+[`check_colnames()`](https://imbroglio-dc.github.io/dctools/reference/check_colnames.md)
 /
-[`clean_colnames()`](https://imbroglio-dc.github.io/helpers/reference/clean_colnames.md)
+[`clean_colnames()`](https://imbroglio-dc.github.io/dctools/reference/clean_colnames.md)
 — non-syntactic, dupes, case-collisions, spaces
 
 refactor
-[`clean_colnames()`](https://imbroglio-dc.github.io/helpers/reference/clean_colnames.md)
+[`clean_colnames()`](https://imbroglio-dc.github.io/dctools/reference/clean_colnames.md)
 to wrap
 [`janitor::make_clean_names()`](https://sfirke.github.io/janitor/reference/make_clean_names.html)
 (more robust than the hand-rolled gsub chain) while keeping the
 `colname_map` before/after attribute;
-[`check_colnames()`](https://imbroglio-dc.github.io/helpers/reference/check_colnames.md)
+[`check_colnames()`](https://imbroglio-dc.github.io/dctools/reference/check_colnames.md)
 stays custom (report-only). `janitor` in Suggests, guarded (errors if
 absent) - see `memos/decisions.md` 2026-07-10.
 
@@ -34,7 +34,7 @@ report coercions + NAs introduced
 
 ## 2. Missingness & sentinels
 
-[`detect_missing_sentinels()`](https://imbroglio-dc.github.io/helpers/reference/detect_missing_sentinels.md)
+[`detect_missing_sentinels()`](https://imbroglio-dc.github.io/dctools/reference/detect_missing_sentinels.md)
 — disguised-missing numeric codes & string tokens
 
 `convert_sentinels(data, rules)` — apply confirmed sentinels -\> NA with
@@ -44,18 +44,18 @@ before/after audit
 signal
 
 `plot_missingness(data)` — vis_miss-style figure on
-[`theme_dc()`](https://imbroglio-dc.github.io/helpers/reference/theme_dc.md)
+[`theme_dc()`](https://imbroglio-dc.github.io/dctools/reference/theme_dc.md)
 
 ## 3. Validation & QC
 
-[`assert_columns()`](https://imbroglio-dc.github.io/helpers/reference/assert_columns.md),
-[`check_unique_id()`](https://imbroglio-dc.github.io/helpers/reference/check_unique_id.md),
-[`flag_out_of_range()`](https://imbroglio-dc.github.io/helpers/reference/flag_out_of_range.md)
+[`assert_columns()`](https://imbroglio-dc.github.io/dctools/reference/assert_columns.md),
+[`check_unique_id()`](https://imbroglio-dc.github.io/dctools/reference/check_unique_id.md),
+[`flag_out_of_range()`](https://imbroglio-dc.github.io/dctools/reference/flag_out_of_range.md)
 
-[`check_constant_cols()`](https://imbroglio-dc.github.io/helpers/reference/check_constant_cols.md)
+[`check_constant_cols()`](https://imbroglio-dc.github.io/dctools/reference/check_constant_cols.md)
 — zero-variance / all-NA
 
-[`describe_cohort()`](https://imbroglio-dc.github.io/helpers/reference/describe_cohort.md)
+[`describe_cohort()`](https://imbroglio-dc.github.io/dctools/reference/describe_cohort.md)
 — one-call structured QC report (diff across data refreshes)
 
 `validate_schema(data, spec)` — codebook-driven: columns + types +
@@ -63,9 +63,11 @@ ranges + key uniqueness
 
 `check_duplicate_cols(data)` — identical content under a different name
 
-`join_audit(left, right, by, relationship)` — strict-join wrapper (sets
-`relationship`/`unmatched`/`na_matches`) + before/after row-count and
-match-rate audit trail; home skill: `data-qc` (references/cohort.md §2;
+`join_audit(left, right, by, relationship)` — strict-join wrapper
+(declares `relationship`/`unmatched`/`na_matches`, `na_matches` default
+`"never"`; `type` = left/inner/right/full) + before/after row-count and
+match-rate audit trail (attached as `attr(., "join_audit")`), warns on
+row inflation; home skill: `data-qc` (references/cohort.md §2;
 external-mining ledger \#1)
 
 `check_id_consistency(data, id, time)` — panel: ragged IDs, dup
@@ -76,11 +78,11 @@ DOB/age mismatch
 
 ## 4. Redundancy & collinearity
 
-[`check_collinearity()`](https://imbroglio-dc.github.io/helpers/reference/check_collinearity.md)
+[`check_collinearity()`](https://imbroglio-dc.github.io/dctools/reference/check_collinearity.md)
 — numeric correlation pairs (first pass)
 
 extend
-[`check_collinearity()`](https://imbroglio-dc.github.io/helpers/reference/check_collinearity.md)
+[`check_collinearity()`](https://imbroglio-dc.github.io/dctools/reference/check_collinearity.md)
 — Cramer’s V (categorical), VIF, perfect-alias detection
 
 `near_zero_var(data)` — caret-style near-constant predictors (no caret
@@ -118,9 +120,9 @@ codebook
 
 ## 7. Diagnostics & reporting
 
-[`theme_dc()`](https://imbroglio-dc.github.io/helpers/reference/theme_dc.md),
-[`tbl1()`](https://imbroglio-dc.github.io/helpers/reference/tbl1.md),
-[`suppress_small_cells()`](https://imbroglio-dc.github.io/helpers/reference/suppress_small_cells.md)
+[`theme_dc()`](https://imbroglio-dc.github.io/dctools/reference/theme_dc.md),
+[`tbl1()`](https://imbroglio-dc.github.io/dctools/reference/tbl1.md),
+[`suppress_small_cells()`](https://imbroglio-dc.github.io/dctools/reference/suppress_small_cells.md)
 
 `plot_roc()`, `plot_calibration()`, `plot_decision_curve()`,
 `plot_forest()` (generalize panel_diagnostics.R)
@@ -137,10 +139,14 @@ into output/
 CV branching)
 
 `compare_targets(results, targets, tolerances)` — replication-target
-verification: per-target diff vs documented tolerance, PASS/FAIL table;
-home skill: `estimation-diagnostics` (references/replication.md;
-external-mining ledger \#22). The `audit-reproducibility` skill consumes
-the same comparison for manuscript claims (#23)
+verification: per-target diff vs documented tolerance,
+PASS/FAIL/UNMATCHED table; kind-based tolerances (integers exact,
+estimates \< 0.01, SEs \< 0.05, percentages \< 0.1, p-values by
+significance level), per-row override, named-vector or data-frame
+results. Home skill: `estimation-diagnostics`
+(references/replication.md; external-mining ledger \#22). The
+`audit-reproducibility` skill consumes the same comparison for
+manuscript claims (#23)
 
 ## 9. Model assumptions & diagnostics (regression / GLM)
 

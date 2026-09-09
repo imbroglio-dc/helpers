@@ -16,16 +16,16 @@ pak::pak("imbroglio-dc/helpers")
 
 | Area | Functions |
 |----|----|
-| **Project scaffolding** | [`create_project()`](https://imbroglio-dc.github.io/helpers/reference/create_project.md), [`make_file_dirs()`](https://imbroglio-dc.github.io/helpers/reference/make_file_dirs.md) |
-| **Packages & environment** | [`read_packages()`](https://imbroglio-dc.github.io/helpers/reference/read_packages.md), [`load_packages()`](https://imbroglio-dc.github.io/helpers/reference/load_packages.md), [`configure_parallel()`](https://imbroglio-dc.github.io/helpers/reference/configure_parallel.md) |
-| **Data validation** | [`assert_columns()`](https://imbroglio-dc.github.io/helpers/reference/assert_columns.md), [`check_unique_id()`](https://imbroglio-dc.github.io/helpers/reference/check_unique_id.md), [`flag_out_of_range()`](https://imbroglio-dc.github.io/helpers/reference/flag_out_of_range.md) |
-| **PHI-safe output** | [`suppress_small_cells()`](https://imbroglio-dc.github.io/helpers/reference/suppress_small_cells.md) |
-| **Clinical formulas** | [`ckd_epi_2021()`](https://imbroglio-dc.github.io/helpers/reference/ckd_epi_2021.md) |
-| **Visualization & tables** | [`theme_dc()`](https://imbroglio-dc.github.io/helpers/reference/theme_dc.md), [`tbl1()`](https://imbroglio-dc.github.io/helpers/reference/tbl1.md) |
+| **Project scaffolding** | [`create_project()`](https://imbroglio-dc.github.io/dctools/reference/create_project.md), [`make_file_dirs()`](https://imbroglio-dc.github.io/dctools/reference/make_file_dirs.md) |
+| **Packages & environment** | [`read_packages()`](https://imbroglio-dc.github.io/dctools/reference/read_packages.md), [`load_packages()`](https://imbroglio-dc.github.io/dctools/reference/load_packages.md), [`configure_parallel()`](https://imbroglio-dc.github.io/dctools/reference/configure_parallel.md) |
+| **Data validation** | [`assert_columns()`](https://imbroglio-dc.github.io/dctools/reference/assert_columns.md), [`check_unique_id()`](https://imbroglio-dc.github.io/dctools/reference/check_unique_id.md), [`flag_out_of_range()`](https://imbroglio-dc.github.io/dctools/reference/flag_out_of_range.md) |
+| **PHI-safe output** | [`suppress_small_cells()`](https://imbroglio-dc.github.io/dctools/reference/suppress_small_cells.md) |
+| **Clinical formulas** | [`ckd_epi_2021()`](https://imbroglio-dc.github.io/dctools/reference/ckd_epi_2021.md) |
+| **Visualization & tables** | [`theme_dc()`](https://imbroglio-dc.github.io/dctools/reference/theme_dc.md), [`tbl1()`](https://imbroglio-dc.github.io/dctools/reference/tbl1.md) |
 
 ## Scaffolding a new project
 
-[`create_project()`](https://imbroglio-dc.github.io/helpers/reference/create_project.md)
+[`create_project()`](https://imbroglio-dc.github.io/dctools/reference/create_project.md)
 is the single entry point for both project archetypes:
 
 ``` r

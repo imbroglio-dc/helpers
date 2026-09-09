@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/imbroglio-dc/helpers/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/imbroglio-dc/dctools/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>dctools roadmap</h1>
-      <small class="dont-index">Source: <a href="https://github.com/imbroglio-dc/helpers/blob/main/ROADMAP.md" class="external-link"><code>ROADMAP.md</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/imbroglio-dc/dctools/blob/main/ROADMAP.md" class="external-link"><code>ROADMAP.md</code></a></small>
     </div>
 
 <div id="dctools-roadmap" class="section level1">
@@ -57,7 +57,7 @@
 <li><label><input type="checkbox" checked><code><a href="reference/describe_cohort.html">describe_cohort()</a></code> — one-call structured QC report (diff across data refreshes)</label></li>
 <li><label><input type="checkbox"><code>validate_schema(data, spec)</code> — codebook-driven: columns + types + ranges + key uniqueness</label></li>
 <li><label><input type="checkbox"><code>check_duplicate_cols(data)</code> — identical content under a different name</label></li>
-<li><label><input type="checkbox"><code>join_audit(left, right, by, relationship)</code> — strict-join wrapper (sets <code>relationship</code>/<code>unmatched</code>/<code>na_matches</code>) + before/after row-count and match-rate audit trail; home skill: <code>data-qc</code> (references/cohort.md §2; external-mining ledger #1)</label></li>
+<li><label><input type="checkbox" checked><code>join_audit(left, right, by, relationship)</code> — strict-join wrapper (declares <code>relationship</code>/<code>unmatched</code>/<code>na_matches</code>, <code>na_matches</code> default <code>"never"</code>; <code>type</code> = left/inner/right/full) + before/after row-count and match-rate audit trail (attached as <code>attr(., "join_audit")</code>), warns on row inflation; home skill: <code>data-qc</code> (references/cohort.md §2; external-mining ledger #1)</label></li>
 <li><label><input type="checkbox"><code>check_id_consistency(data, id, time)</code> — panel: ragged IDs, dup (id,time), gaps, non-monotonic</label></li>
 <li><label><input type="checkbox"><code>check_dates(data)</code> — implausible/future dates, end-before-start, DOB/age mismatch</label></li>
 </ul></div>
@@ -92,7 +92,7 @@
 <h2 id="id_8-reproducibility--workflow">8. Reproducibility / workflow<a class="anchor" aria-label="anchor" href="#id_8-reproducibility--workflow"></a></h2>
 <ul class="task-list"><li><label><input type="checkbox"><code>session_fingerprint()</code> — R version, package versions, seed, git SHA into output/</label></li>
 <li><label><input type="checkbox"><code>tar_template()</code> helpers — common targets patterns (map-over-outcomes, CV branching)</label></li>
-<li><label><input type="checkbox"><code>compare_targets(results, targets, tolerances)</code> — replication-target verification: per-target diff vs documented tolerance, PASS/FAIL table; home skill: <code>estimation-diagnostics</code> (references/replication.md; external-mining ledger #22). The <code>audit-reproducibility</code> skill consumes the same comparison for manuscript claims (#23)</label></li>
+<li><label><input type="checkbox" checked><code>compare_targets(results, targets, tolerances)</code> — replication-target verification: per-target diff vs documented tolerance, PASS/FAIL/UNMATCHED table; kind-based tolerances (integers exact, estimates &lt; 0.01, SEs &lt; 0.05, percentages &lt; 0.1, p-values by significance level), per-row override, named-vector or data-frame results. Home skill: <code>estimation-diagnostics</code> (references/replication.md; external-mining ledger #22). The <code>audit-reproducibility</code> skill consumes the same comparison for manuscript claims (#23)</label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="id_9-model-assumptions--diagnostics-regression--glm">9. Model assumptions &amp; diagnostics (regression / GLM)<a class="anchor" aria-label="anchor" href="#id_9-model-assumptions--diagnostics-regression--glm"></a></h2>

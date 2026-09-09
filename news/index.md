@@ -5,9 +5,9 @@
 - Initial package scaffold (renamed from the `helpers` script
   collection).
 - Project scaffolding:
-  [`create_project()`](https://imbroglio-dc.github.io/helpers/reference/create_project.md)
+  [`create_project()`](https://imbroglio-dc.github.io/dctools/reference/create_project.md)
   (analysis + package archetypes) and
-  [`make_file_dirs()`](https://imbroglio-dc.github.io/helpers/reference/make_file_dirs.md).
+  [`make_file_dirs()`](https://imbroglio-dc.github.io/dctools/reference/make_file_dirs.md).
 - `create_project(type = "analysis")` now builds the project directly
   instead of cloning an external template: a PHI-aware `.gitignore`,
   `.Rprofile`, `.Rproj`, a README stub, and the `memos/` +
@@ -17,25 +17,39 @@
   network dependency (the analysis archetype is now unit-tested) and the
   `template_repo` argument.
 - Package & environment helpers:
-  [`read_packages()`](https://imbroglio-dc.github.io/helpers/reference/read_packages.md),
-  [`load_packages()`](https://imbroglio-dc.github.io/helpers/reference/load_packages.md),
-  [`configure_parallel()`](https://imbroglio-dc.github.io/helpers/reference/configure_parallel.md).
+  [`read_packages()`](https://imbroglio-dc.github.io/dctools/reference/read_packages.md),
+  [`load_packages()`](https://imbroglio-dc.github.io/dctools/reference/load_packages.md),
+  [`configure_parallel()`](https://imbroglio-dc.github.io/dctools/reference/configure_parallel.md).
 - Data validation:
-  [`assert_columns()`](https://imbroglio-dc.github.io/helpers/reference/assert_columns.md),
-  [`check_unique_id()`](https://imbroglio-dc.github.io/helpers/reference/check_unique_id.md),
-  [`flag_out_of_range()`](https://imbroglio-dc.github.io/helpers/reference/flag_out_of_range.md).
+  [`assert_columns()`](https://imbroglio-dc.github.io/dctools/reference/assert_columns.md),
+  [`check_unique_id()`](https://imbroglio-dc.github.io/dctools/reference/check_unique_id.md),
+  [`flag_out_of_range()`](https://imbroglio-dc.github.io/dctools/reference/flag_out_of_range.md).
+- Join integrity:
+  [`join_audit()`](https://imbroglio-dc.github.io/dctools/reference/join_audit.md)
+  — strict-join wrapper that declares the
+  `relationship`/`unmatched`/`na_matches` contract (`na_matches`
+  defaults to `"never"`), returns the joined data with a before/after
+  row-count + match-rate audit trail attached, and warns on row
+  inflation. Home skill: `data-qc`.
 - Data-intake QC:
-  [`describe_cohort()`](https://imbroglio-dc.github.io/helpers/reference/describe_cohort.md),
-  [`detect_missing_sentinels()`](https://imbroglio-dc.github.io/helpers/reference/detect_missing_sentinels.md),
-  [`check_colnames()`](https://imbroglio-dc.github.io/helpers/reference/check_colnames.md),
-  [`clean_colnames()`](https://imbroglio-dc.github.io/helpers/reference/clean_colnames.md),
-  [`check_types()`](https://imbroglio-dc.github.io/helpers/reference/check_types.md),
-  [`check_constant_cols()`](https://imbroglio-dc.github.io/helpers/reference/check_constant_cols.md),
-  [`check_collinearity()`](https://imbroglio-dc.github.io/helpers/reference/check_collinearity.md).
+  [`describe_cohort()`](https://imbroglio-dc.github.io/dctools/reference/describe_cohort.md),
+  [`detect_missing_sentinels()`](https://imbroglio-dc.github.io/dctools/reference/detect_missing_sentinels.md),
+  [`check_colnames()`](https://imbroglio-dc.github.io/dctools/reference/check_colnames.md),
+  [`clean_colnames()`](https://imbroglio-dc.github.io/dctools/reference/clean_colnames.md),
+  [`check_types()`](https://imbroglio-dc.github.io/dctools/reference/check_types.md),
+  [`check_constant_cols()`](https://imbroglio-dc.github.io/dctools/reference/check_constant_cols.md),
+  [`check_collinearity()`](https://imbroglio-dc.github.io/dctools/reference/check_collinearity.md).
 - PHI-safe output:
-  [`suppress_small_cells()`](https://imbroglio-dc.github.io/helpers/reference/suppress_small_cells.md).
+  [`suppress_small_cells()`](https://imbroglio-dc.github.io/dctools/reference/suppress_small_cells.md).
+- Replication / reproducibility:
+  [`compare_targets()`](https://imbroglio-dc.github.io/dctools/reference/compare_targets.md)
+  — per-target PASS/FAIL/UNMATCHED comparison of computed results
+  against documented targets at kind-based tolerances (integers exact,
+  estimates \< 0.01, SEs \< 0.05, percentages \< 0.1, p-values by
+  significance level). Home skill: `estimation-diagnostics`; also used
+  by the `audit-reproducibility` skill.
 - Clinical formulas:
-  [`ckd_epi_2021()`](https://imbroglio-dc.github.io/helpers/reference/ckd_epi_2021.md).
+  [`ckd_epi_2021()`](https://imbroglio-dc.github.io/dctools/reference/ckd_epi_2021.md).
 - House plotting / tables:
-  [`theme_dc()`](https://imbroglio-dc.github.io/helpers/reference/theme_dc.md),
-  [`tbl1()`](https://imbroglio-dc.github.io/helpers/reference/tbl1.md).
+  [`theme_dc()`](https://imbroglio-dc.github.io/dctools/reference/theme_dc.md),
+  [`tbl1()`](https://imbroglio-dc.github.io/dctools/reference/tbl1.md).

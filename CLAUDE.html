@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/imbroglio-dc/helpers/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/imbroglio-dc/dctools/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>CLAUDE.md — dctools</h1>
-      <small class="dont-index">Source: <a href="https://github.com/imbroglio-dc/helpers/blob/main/CLAUDE.md" class="external-link"><code>CLAUDE.md</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/imbroglio-dc/dctools/blob/main/CLAUDE.md" class="external-link"><code>CLAUDE.md</code></a></small>
     </div>
 
 <div id="claudemd--dctools" class="section level1">
@@ -47,7 +47,7 @@
 <li>Keep the <em>judgment/caveats</em> out of the function — a paragraph of “when/why” belongs in a skill or rule, not buried in roxygen. Roxygen documents <em>what it does</em>, not <em>when to use it</em>.</li>
 <li>If you find yourself wanting to hand-write a mechanic inside a skill or analysis, it belongs <strong>here</strong> instead.</li>
 </ul><p><code>ROADMAP.md</code> lists planned functions grouped by analysis stage; each group maps to a home skill (data-preparation, analysis-design, statistical-critique, simulation-study, prediction-eval, …). Keep <code>ROADMAP.md</code> and the marketplace’s <code>docs/design-philosophy.md</code> in sync (that doc holds the full complementarity map).</p>
-<p><strong>Build order is demand-driven, not roadmap order</strong> (decision 2026-07-04, see <code>memos/decisions.md</code>): ROADMAP sections 9-12 are the verification gates that make agent-delegated analyses auditable — implement a function when a real analysis or its home skill needs the gate. Cross-repo strategy: <code>biostat-support/docs/north-star.md</code>. <strong>Current focus, next actions, and progress live in <code>PROJECT.md</code></strong> — refresh it (<code>/project-status</code>) when they change. Tooling friction goes to <code>workflow-feedback.md</code>, not the decision log.</p>
+<p><strong>Build order is demand-driven, not roadmap order</strong> (decision 2026-07-04, see <code>memos/decisions.md</code>): ROADMAP sections 9-12 are the verification gates that make agent-delegated analyses auditable — implement a function when a real analysis or its home skill needs the gate. Cross-repo strategy: <code>biostat-support/docs/north-star.md</code>. <strong>Current focus, next actions, and progress live in <code>STATUS.md</code></strong> — refresh it (<code>/update-status</code>) when they change; durable orientation lives in <code>OVERVIEW.md</code>. Tooling friction goes to <code>workflow-feedback.md</code>, not the decision log.</p>
 </div>
 <div class="section level2">
 <h2 id="package-discipline-non-negotiable">Package discipline (non-negotiable)<a class="anchor" aria-label="anchor" href="#package-discipline-non-negotiable"></a></h2>

@@ -8,16 +8,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/imbroglio-dc/helpers/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/imbroglio-dc/dctools/blob/main/DESCRIPTION)
 
 Chen D (2026). *dctools: Reusable Utilities and Project Scaffolding for
 Biostatistics Research*. R package version 0.0.0.9000,
-<https://github.com/imbroglio-dc/helpers>.
+<https://github.com/imbroglio-dc/dctools>.
 
     @Manual{,
       title = {dctools: Reusable Utilities and Project Scaffolding for Biostatistics Research},
       author = {David Chen},
       year = {2026},
       note = {R package version 0.0.0.9000},
-      url = {https://github.com/imbroglio-dc/helpers},
+      url = {https://github.com/imbroglio-dc/dctools},
     }

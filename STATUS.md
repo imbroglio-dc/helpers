@@ -1,0 +1,45 @@
+# dctools — status
+
+**State:** active · **Updated:** 2026-09-03
+
+## Current focus
+
+Demand-driven build of the verification gates (ROADMAP sections 9-12):
+implement a function when a real analysis or its home skill needs the
+gate, not in roadmap order (decision 2026-07-04, `memos/decisions.md`).
+
+## Next actions
+
+Backfill the thin tests (`test-viz.R`, `test-packages.R`) when those
+modules are next touched.
+
+Build ROADMAP section 9-12 functions as home skills or real analyses
+demand them.
+
+Keep `ROADMAP.md` in sync with the marketplace’s
+`docs/design-philosophy.md` complementarity map when either changes.
+
+## Open questions / blockers
+
+- None open.
+
+## Recent progress
+
+- 2026-09-03 — converted this repo’s status doc from `PROJECT.md` +
+  `/project-status` to `OVERVIEW.md` + `STATUS.md` + `/update-status`,
+  matching the canonical scheme the `biostat-support` router-composition
+  design adopted ecosystem-wide; `scaffold.R` comments updated to say
+  the `project-setup` skill (not an installed kernel) writes the router
+  and traveling guard hooks, from the biostat plugin’s own
+  `plugins/biostat/hooks/`.
+- 2026-07-10 —
+  [`clean_colnames()`](https://imbroglio-dc.github.io/dctools/reference/clean_colnames.md)
+  refactored to wrap
+  [`janitor::make_clean_names()`](https://sfirke.github.io/janitor/reference/make_clean_names.html)
+  (janitor in Suggests, guarded); ROADMAP section 1 item closed;
+  `check()` clean.
+- 2026-07-04 — ROADMAP sections 9-12 reframed as delegation gates;
+  demand-driven build order adopted (`memos/decisions.md`); `PROJECT.md`
+  deployed as the status home.
+
+## Notes

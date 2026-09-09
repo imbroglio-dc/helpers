@@ -49,7 +49,10 @@ friction goes to `workflow-feedback.md`, not the decision log.
   plain ASCII — no em-dashes/accents in `R/`).
 - **After any roxygen/export change:** run `devtools::document()` (regenerates `man/` +
   `NAMESPACE`), then `devtools::test()` and `devtools::check()` — must pass clean. CI runs
-  R-CMD-check + coverage + pkgdown and errors on warnings.
+  R-CMD-check + coverage and errors on warnings. (pkgdown CI was removed 2026-09-09 — it had
+  been failing since at least PR #8 on a missing reference-index entry and a stale site URL
+  in `_pkgdown.yml`; reinstate deliberately once someone wants the site, rather than leaving
+  a permanently-red check in place.)
 - **Format** with Air (`air format .`; config in `air.toml`).
 
 ## Conventions

@@ -173,8 +173,9 @@ create_project <- function(name, path = ".", type = c("analysis", "package"),
     "code/functions/   pure, documented, reusable functions (no library() calls)",
     "code/analysis/    scripts or _targets.R that orchestrate the functions",
     "data/raw/         read-only raw inputs (git-ignored - PHI)",
-    "data/processed/   derived analysis datasets (git-ignored)",
-    "data/metadata/    curated, non-PHI codebooks / dictionaries (versioned)",
+    "data/processed/   derived analysis datasets (git-ignored); processed means it went",
+    "                   through some pipeline step, NOT that it is de-identified",
+    "data/metadata/    curated, VERIFIED non-sensitive codebooks / dictionaries (versioned)",
     "output/           tables, figures, models (git-ignored; markers kept)",
     "docs/             rendered deliverables (reports, slides) - versioned",
     "tests/testthat/   tests, run with testthat::test_dir(\"tests/testthat\")",
@@ -188,8 +189,10 @@ create_project <- function(name, path = ".", type = c("analysis", "package"),
     "## PHI constraint",
     "",
     "Never commit, print, or transmit individual-level patient data. `data/raw/`",
-    "and `data/processed/` are git-ignored. Suppress table cells with counts",
-    "below the project's threshold before any output leaves the project."
+    "and `data/processed/` are git-ignored. `data/processed/` is not automatically",
+    "de-identified just because it has been processed - verify before treating it",
+    "as safe. Suppress table cells with counts below the project's threshold before",
+    "any output leaves the project."
   ), fs::path(dest, "README.md"))
 }
 
